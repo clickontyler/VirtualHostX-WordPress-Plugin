@@ -7,3 +7,11 @@ One feature of VHX is sharing your websites across your local network to other c
 A huge percentage of my customers use VHX to build, test, and host WordPress websites. And because of the way WordPress handles URLs to static assets, when you attempt to view your website over a shared VHX connection, all of your images, stylesheets, and other static assets will break because the "fake" domian name that WordPress was initally installed on doesn't really exist outside your local Mac.
 
 This plugin fixes the domain name for static assets to work no matter how you access the website. I've attempted to cover all replacement cases in my testing, but if you find any of your website files are still pointing to the original domain name, please let me know or feel free to submit a pull request.
+
+## Installation
+
+1. [Download the latest release](https://github.com/clickontyler/VirtualHostX-WordPress-Plugin/releases).
+2. Unzip it.
+3. Copy the `virtualhostx` folder into your website's `wp-content/plugins/` folder.
+4. Go to your WordPress Admin site and activate the `VirtualHostX Shared Websites` plugin.
+5. There are no other options or settings to configure.
