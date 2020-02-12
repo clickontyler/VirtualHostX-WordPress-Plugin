@@ -16,7 +16,6 @@ class VirtualHostX
 
     public static function activate()
     {
-        error_log('==========');
         VirtualHostX::detectDomain();
 
         add_filter('content_url', [self::class, 'fixDomain']);
@@ -37,7 +36,7 @@ class VirtualHostX
             if($proto == 'https') { $_SERVER['HTTPS'] = 'on'; }
         } else {
             $s = empty($_SERVER['HTTPS']) ? '' : ($_SERVER['HTTPS'] == 'on') ? 's' : '';
-            $port = ($_SERVER['SERVER_PORT'] == '80') ? '' : (":".$_SERVER['SERVER_PORT']);
+            $port = (($_SERVER['SERVER_PORT'] == '80') || ($_SERVER['SERVER_PORT'] == '443')) ? '' : (":".$_SERVER['SERVER_PORT']);
             $url = "http$s://" . $_SERVER['HTTP_HOST'] . $port;
         }
         self::$domain = $url;
